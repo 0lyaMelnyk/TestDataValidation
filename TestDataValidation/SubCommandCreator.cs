@@ -20,20 +20,20 @@ namespace TestDataValidation
         }
         private static IValidator GetValidatorByType(string command)
         {
-            switch(command)
+            return command switch
             {
-                case "passport": return new PassportValidatorProxy();
-                case "rnokpp": return new TaxNumberValidator();
-                case "birthday": return new DateValidator();
-                case "deviceUuid": return new DeviceValidator();
-                default : return null;
-            }
+                "passport" => new PassportValidatorProxy(),
+                "rnokpp" => new TaxNumberValidator(),
+                "birthday" => new DateValidator(),
+                "deviceUuid" => new DeviceValidator(),
+                _ => null,
+            };
         }
         static void HandleSubCommand(IValidator validator, string value)
         {
             try
             {
-                Console.WriteLine(validator.Validate(value));
+                Console.WriteLine(validator?.Validate(value));
             }
             catch (Exception ex)
             {

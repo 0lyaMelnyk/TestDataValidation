@@ -21,11 +21,9 @@ namespace DataValidationTests
         {
             RootCommand rootCommand = new RootCommand();
             rootCommand.AddCommand(SubCommandCreator.CreateNewSubcommand(command, $"Validate {command}"));
-            using (var consoleOutput = new ConsoleOutput())
-            { 
-                rootCommand.InvokeAsync(new string[] { command, value });
-                Assert.Contains(true.ToString(), consoleOutput.GetOuput());
-            }
+            using var consoleOutput = new ConsoleOutput();
+            rootCommand.InvokeAsync(new string[] { command, value });
+            Assert.Contains(true.ToString(), consoleOutput.GetOuput());
         }
 
         [Theory]
