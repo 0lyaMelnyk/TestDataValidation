@@ -12,7 +12,7 @@ namespace TestDataValidation.Validators
             {
                 throw new ArgumentException($"Wrong date format {value}");
             }
-            //TODO: here can be validation for age threshold if it's needed
+            //TODO: here can be extended validation for age threshold if it's needed
             return true;
         }
     }
