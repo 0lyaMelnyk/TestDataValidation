@@ -20,4 +20,4 @@ How to run the app:
 1. Pull repository to the local machine
 2. Build solution
 3. Go to .exe file location
-4. Run command e.g. `.\TestDataValidation.exe TestDataValidation passport БД123456`
+4. Run command e.g. `.\TestDataValidation.exe passport БД123456` or it can be used `.\TestDataValidation.exe TestDataValidation passport БД123456` as well

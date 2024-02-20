@@ -10,7 +10,7 @@ namespace TestDataValidation
         public static Command CreateNewSubcommand(string name, string description)
         {
             var subCommand = new Command(name, description);
-            var valueArgument = new Argument<string>(name: "value", "some description");
+            var valueArgument = new Argument<string>(name: "value");
             subCommand.AddArgument(valueArgument);
             subCommand.SetHandler(value =>
             {
